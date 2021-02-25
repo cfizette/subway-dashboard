@@ -4,13 +4,13 @@ import { Line } from "../models/lines.model";
 export const mtaAPIKey = "pFuBYmPrcl3uu601f9dGF9rjQlQ8w0Wh1vYUEZqC"
 
 export const lineToEndpoint: Map<Line, string> = new Map([
-    [Line._1,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm"],
-    [Line._3,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm"],
-    [Line._2,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm"],
-    [Line._4,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm"],
-    [Line._5,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm"],
-    [Line._6,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm"],
-    [Line._7,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm-7"],
+    [Line._1,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"],
+    [Line._3,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"],
+    [Line._2,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"],
+    [Line._4,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"],
+    [Line._5,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"],
+    [Line._6,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs"],
+    [Line._7,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-7"],
     [Line.A,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-ace"],
     [Line.B,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm"],
     [Line.C,"https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-ace"],
