@@ -1,14 +1,12 @@
-import { ReadStream } from "fs";
 import { lineToEndpoint } from "../constants/api.constants";
 import { Line } from "../models/lines.model";
-import { Arrivals, Station } from "../models/station.model";
 import { FeedMessage } from "../proto/gtfs-realtime";
 import { MTAApiService } from "./mta-api.service";
 
 
 
 
-export class StationsService {
+export class ArrivalsService {
     mtaEndpointMap: Map<Line, string>
 
     constructor( private mtaApiService: MTAApiService ) {
@@ -23,25 +21,23 @@ export class StationsService {
 
         const feedMessagePromise = this.getRealtimeLineData(line)
 
-        const allStopUpdates = feedMessagePromise.then((feedMessage) => {
+        const ret = feedMessagePromise.then((feedMessage) => {
+            // Get all stopTimeUpdates
             return feedMessage.entity.map((feedEntity) => {
                 if (feedEntity.tripUpdate) return feedEntity.tripUpdate.stopTimeUpdate
                 return []
             }).reduce( (acc, cv) => acc.concat(cv))
-        })
-        
-        const stationStopUpdates = allStopUpdates.then((allStopUpdates) => {
+            // Filter for where stopId === desired stop
+        }).then((allStopUpdates) => {
             return allStopUpdates.filter((stopUpdate) => {
                 return stopUpdate.stopId === stopIdWithDir
             })
-        })
-
-        const ret = stationStopUpdates.then((stationStopUpdates) => {
+            // Grab the arrival times for the stop
+        }).then((stationStopUpdates) => {
             return stationStopUpdates.map((stopUpdate) => stopUpdate.arrival.time)
         })
 
         return ret
-        
     }
 
     // Makes call to MTA API and decodes response into FeedMessage

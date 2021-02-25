@@ -1,8 +1,7 @@
 import { lineToEndpoint, mtaAPIKey } from "../../../../src/app/constants/api.constants"
 import { Line } from "../../../../src/app/models/lines.model"
-import { Station } from "../../../../src/app/models/station.model"
 import { MTAApiService } from "../../../../src/app/services/mta-api.service"
-import { StationsService } from "../../../../src/app/services/stations.service"
+import { ArrivalsService, StationsService } from "../../../../src/app/services/arrivals.service"
 
 
 
@@ -17,10 +16,10 @@ describe('MTA Service', () => {
 })
 
 
-describe('Station Service', () => {
+describe('Arrivals Service', () => {
     it('should do something', async () => {
         const mtaSvc = new MTAApiService(mtaAPIKey)
-        const stationService = new StationsService(mtaSvc)
+        const stationService = new ArrivalsService(mtaSvc)
         const res = await stationService.getNextArrivals(Line._1, '103', 'N')
         console.log(res)
     })
