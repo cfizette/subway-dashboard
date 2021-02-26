@@ -1,7 +1,7 @@
 import { lineToEndpoint, mtaAPIKey } from "../../../../src/app/constants/api.constants"
 import { Line } from "../../../../src/app/models/lines.model"
 import { MTAApiService } from "../../../../src/app/services/mta-api.service"
-import { ArrivalsService, StationsService } from "../../../../src/app/services/arrivals.service"
+import { ArrivalsService } from "../../../../src/app/services/arrivals.service"
 
 
 

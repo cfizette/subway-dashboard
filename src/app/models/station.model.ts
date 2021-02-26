@@ -1,8 +1,9 @@
 import { NumberSymbol } from "@angular/common";
 import { Line } from "./lines.model";
+import { Route } from "./route.model";
 
 
-export type Arrivals = Array<Date>
+
 
 export const DIRECTION = {
     N: 'N',
