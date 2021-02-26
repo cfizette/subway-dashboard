@@ -1,23 +1,15 @@
 
 
 export class Route {
-    id: string
-    shortName: string
-    longName: string
-    description: string
-
-    // Probably not needed but just case
-    color: string
-    textColor: string
 
     constructor(
-        id: string,
-        shortName: string,
-        longName: string,
-        description: string,
+        public id: string,
+        public shortName: string,
+        public longName: string,
+        public description: string,
 
-        color: string,
-        textColor: string,
+        public color: string,
+        public textColor: string,
     ){}
 
 }

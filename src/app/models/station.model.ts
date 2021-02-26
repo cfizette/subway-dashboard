@@ -11,25 +11,16 @@ export const DIRECTION = {
 }
 
 export class Station {
-    stationId: number
-    gtfsStopId: string
-    line: string
-    stopName: string
-    routes: Array<Line>
-    latitude: number
-    longitude: number
-    northDirLabel: string
-    southDirLabel: string
 
     constructor(
-        stationId: number,
-        gtfsStopId: string,
-        line: string,
-        stopName: string,
-        routes: Array<Line>,
-        latitude: number,
-        longitude: number,
-        northDirLabel: string,
-        southDirLabel: string
+        public stationId: number,
+        public gtfsStopId: string,
+        public line: string,
+        public stopName: string,
+        public routes: Array<Line>,
+        public latitude: number,
+        public longitude: number,
+        public northDirLabel: string,
+        public southDirLabel: string
     ){}
 }

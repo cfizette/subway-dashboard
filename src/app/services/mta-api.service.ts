@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 
 import fetch, { Response } from 'node-fetch';
 

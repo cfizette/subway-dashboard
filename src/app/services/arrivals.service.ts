@@ -44,12 +44,12 @@ export class ArrivalsService {
             return stationStopUpdates.map((stopUpdate) => <[string, number]>[stopUpdate[0], stopUpdate[1].arrival.time])
             // Convert to Arrival
         }).then((stopUpdates) => {
-            return stopUpdates.map((stopUpdate) => {
+            return Promise.all(stopUpdates.map( async (stopUpdate) => {
                 const routeId = stopUpdate[0]
                 const arrivalTime = stopUpdate[1]
-                const route = this.routeService.get(routeId)
+                const route = await this.routeService.get(routeId)
                 return new Arrival(route, arrivalTime)
-            })
+            }))
         })
 
         return ret
